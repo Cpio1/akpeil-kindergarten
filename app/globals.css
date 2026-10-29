@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Основная палитра */
+  --color-milk: #fff8ee;
+  --color-sand: #f2dfc4;
+  --color-apricot: #edb58f;
+  --color-honey: #dfa64b;
+  --color-cocoa: #49372d;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Производные оттенки: мягкие подложки и тексты с достаточным контрастом */
+  --color-sand-soft: #f8ecda;
+  --color-apricot-soft: #f8dcc7;
+  --color-honey-soft: #f6e2bd;
+  --color-cocoa-soft: #6b5446; /* 6.7:1 на молочном фоне */
+  --color-honey-deep: #8a5a14; /* 5.6:1 на молочном фоне — для мелких акцентных подписей */
+  --color-line: #ead7bb;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-sans: var(--font-golos), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-nunito), var(--font-golos), ui-sans-serif, sans-serif;
+
+  --shadow-soft: 0 10px 30px -14px rgb(73 55 45 / 0.28);
+  --shadow-lift: 0 18px 40px -18px rgb(73 55 45 / 0.38);
+
+  --animate-sway: sway 7s ease-in-out infinite;
+  --animate-spin-slow: spin 40s linear infinite;
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
+
+  @keyframes sway {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(10px) translateY(-4px);
+    }
+  }
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
+:root {
+  --header-h: 60px;
+  color-scheme: light;
+}
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 68px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 8px);
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-milk);
+  color: var(--color-cocoa);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-cocoa);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+::selection {
+  background: var(--color-honey-soft);
+}
+
+/* Мягкое появление при прокрутке (класс ставит компонент Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Формы рамок для фотографий и блоков */
+.shape-arch {
+  border-radius: 999px 999px 32px 32px;
+}
+.shape-blob {
+  border-radius: 58% 42% 46% 54% / 46% 52% 48% 54%;
+}
+.shape-petal {
+  border-radius: 48px 8px 48px 8px;
+}
+.shape-leaf {
+  border-radius: 8px 48px 8px 48px;
+}
+.shape-pebble {
+  border-radius: 40% 60% 55% 45% / 55% 45% 55% 45%;
+}
+.shape-cloud {
+  border-radius: 48px 48px 48px 48px / 40px 40px 56px 56px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
