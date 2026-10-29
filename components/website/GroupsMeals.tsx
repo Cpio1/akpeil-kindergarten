@@ -13,12 +13,12 @@ export function GroupsMeals() {
 
   return (
     <section id="groups" aria-labelledby="groups-title" className="relative overflow-hidden py-16 min-[1400px]:py-20">
-      <Star className="absolute top-14 left-[6%] size-6 animate-twinkle" />
-      <Flower className="absolute right-[5%] bottom-10 size-12 animate-spin-slow opacity-80" />
+      <Star className="absolute top-14 left-[6%] size-6 animate-twinkle" color="#F47C60" />
+      <Flower className="absolute right-[5%] bottom-10 size-12 animate-spin-slow" />
 
       <div className="mx-auto max-w-6xl px-6 xl:px-8">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold text-honey-deep">{t.groups.eyebrow}</p>
+          <p className="text-sm font-semibold text-terracotta-deep">{t.groups.eyebrow}</p>
           <h2 id="groups-title" className="mt-2 text-3xl leading-tight font-extrabold xl:text-[2.1rem]">
             {t.groups.title}
           </h2>
@@ -26,10 +26,10 @@ export function GroupsMeals() {
 
         <div className="mt-10 grid grid-cols-[1fr_1.1fr] items-stretch gap-6">
           {/* Блок «Группы»: арка с крупной семёркой */}
-          <Reveal className="relative rounded-[200px_200px_40px_40px] bg-sand px-10 pt-12 pb-9">
+          <Reveal className="relative rounded-[200px_200px_40px_40px] bg-sun-soft px-10 pt-12 pb-9">
             <div className="flex items-center gap-6">
               <div className="relative grid size-32 shrink-0 place-items-center">
-                <Sun className="absolute inset-0 size-full animate-spin-slow opacity-90" />
+                <Sun className="absolute inset-0 size-full animate-spin-slow" />
                 <span className="relative font-display text-6xl leading-none font-black text-cocoa" aria-hidden="true">
                   {groups}
                 </span>
@@ -41,13 +41,13 @@ export function GroupsMeals() {
                 </h3>
                 <ul className="mt-3 space-y-2">
                   <li className="flex items-center gap-2.5 font-medium">
-                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-milk text-honey-deep">
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-milk text-terracotta-deep">
                       <UsersIcon className="size-4" />
                     </span>
                     {t.groups.groupsFacts[0]}
                   </li>
                   <li className="flex items-center gap-2.5 font-medium">
-                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-milk text-honey-deep">
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-milk text-terracotta-deep">
                       <LanguageIcon className="size-4" />
                     </span>
                     {t.groups.groupsFacts[1]}
@@ -59,10 +59,10 @@ export function GroupsMeals() {
           </Reveal>
 
           {/* Блок «Питание»: асимметричный лист с четырьмя иллюстрациями */}
-          <Reveal delay={120} className="relative rounded-[40px_120px_40px_120px] bg-apricot-soft px-9 py-9">
+          <Reveal delay={120} className="relative rounded-[40px_120px_40px_120px] bg-coral-soft px-9 py-9">
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
               <h3 className="text-2xl font-extrabold">{t.groups.mealsTitle}</h3>
-              <p className="rounded-full bg-milk px-3.5 py-1 text-sm font-bold text-honey-deep">{t.groups.mealsHighlight}</p>
+              <p className="rounded-full bg-milk px-3.5 py-1 text-sm font-bold text-terracotta-deep">{t.groups.mealsHighlight}</p>
             </div>
             <p className="mt-3 max-w-md leading-relaxed text-cocoa-soft">{t.groups.mealsText}</p>
 

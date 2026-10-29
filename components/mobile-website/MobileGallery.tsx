@@ -29,10 +29,10 @@ export function MobileGallery() {
   );
 
   return (
-    <section ref={sectionRef} id="gallery" aria-labelledby="m-gallery-title" className="bg-sand-soft py-12">
+    <section ref={sectionRef} id="gallery" aria-labelledby="m-gallery-title" className="bg-sun-soft py-12">
       <div className="mx-auto max-w-2xl px-4">
         <Reveal>
-          <p className="text-sm font-semibold text-honey-deep">{t.gallery.eyebrow}</p>
+          <p className="text-sm font-semibold text-terracotta-deep">{t.gallery.eyebrow}</p>
           <h2 id="m-gallery-title" className="mt-1.5 text-[1.6rem] leading-tight font-extrabold sm:text-3xl">
             {t.gallery.title}
           </h2>
@@ -64,7 +64,7 @@ export function MobileGallery() {
                       onClick={() => setOpenIndex(i)}
                       aria-label={t.gallery.openPhoto(i + 1)}
                       aria-haspopup="dialog"
-                      className={`relative block w-full overflow-hidden bg-sand shadow-soft active:scale-[0.98] ${
+                      className={`relative block w-full overflow-hidden bg-apricot-soft shadow-soft active:scale-[0.98] ${
                         tileShapes[i % tileShapes.length]
                       } ${wide ? "aspect-[16/10]" : "aspect-square"}`}
                     >
@@ -88,7 +88,7 @@ export function MobileGallery() {
                 onClick={toggle}
                 aria-expanded={expanded}
                 aria-controls="gallery-list"
-                className="mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-full border-2 border-cocoa/80 bg-milk px-5 font-semibold"
+                className="mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-full border-2 border-terracotta bg-milk px-5 font-semibold text-terracotta-deep"
               >
                 {expanded ? t.gallery.showLess : t.gallery.showMore}
                 <ChevronDownIcon className={`size-5 transition-transform ${expanded ? "rotate-180" : ""}`} />

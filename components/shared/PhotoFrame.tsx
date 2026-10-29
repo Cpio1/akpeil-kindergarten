@@ -20,7 +20,7 @@ type PhotoFrameProps = {
  */
 export function PhotoFrame({ photo, alt, pendingLabel, sizes, className = "", eager = false }: PhotoFrameProps) {
   return (
-    <div className={`relative overflow-hidden bg-sand ${className}`}>
+    <div className={`relative overflow-hidden bg-apricot-soft ${className}`}>
       {photo ? (
         <Image
           src={photo.src}
@@ -44,14 +44,15 @@ export function PhotoPlaceholder({ label, compact = false }: { label: string; co
     <div
       role="img"
       aria-label={label}
-      className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-sand-soft via-sand to-apricot-soft p-4 text-center"
+      className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-sun-soft via-apricot-soft to-coral-soft p-4 text-center"
     >
-      <Sun className={`absolute opacity-40 ${compact ? "-top-3 -right-3 size-14" : "top-[8%] right-[10%] size-20"}`} />
-      <Flower className={`absolute opacity-50 ${compact ? "bottom-2 left-2 size-8" : "bottom-[10%] left-[12%] size-12"}`} />
-      <span className="relative grid size-12 place-items-center rounded-full bg-milk/80 text-cocoa-soft shadow-soft">
+      {/* Большие рамки уже окружены декоративным солнцем, поэтому внутри — только цветок. */}
+      {compact && <Sun className="absolute -top-3 -right-3 size-14" />}
+      <Flower className={`absolute ${compact ? "bottom-2 left-2 size-8" : "bottom-[10%] left-[12%] size-12"}`} />
+      <span className="relative grid size-12 place-items-center rounded-full bg-milk text-terracotta-deep shadow-soft">
         <CameraIcon className="size-6" />
       </span>
-      <span className="relative text-sm font-medium text-cocoa-soft">{label}</span>
+      <span className="relative text-sm font-semibold text-cocoa">{label}</span>
     </div>
   );
 }

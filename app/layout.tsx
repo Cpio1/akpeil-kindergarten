@@ -37,7 +37,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFF8EE",
+  themeColor: "#FFFBF5",
+  // <meta name="color-scheme" content="light">: сайт всегда в светлой теме.
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };

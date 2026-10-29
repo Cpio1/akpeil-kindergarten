@@ -5,8 +5,8 @@ import { AppleIcon, BowlIcon, CupIcon, PlateIcon } from "./Icons";
  * Иконки условные: точное меню не предоставлено, поэтому блюда не подписываются.
  */
 export const mealIcons = [
-  { Icon: CupIcon, shape: "rounded-full bg-honey-soft" },
-  { Icon: BowlIcon, shape: "shape-petal bg-milk" },
-  { Icon: AppleIcon, shape: "shape-pebble bg-sand" },
+  { Icon: CupIcon, shape: "rounded-full bg-sun" },
+  { Icon: BowlIcon, shape: "shape-petal bg-sage" },
+  { Icon: AppleIcon, shape: "shape-pebble bg-apricot" },
   { Icon: PlateIcon, shape: "shape-leaf bg-milk" },
 ];

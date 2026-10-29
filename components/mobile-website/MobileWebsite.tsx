@@ -19,7 +19,7 @@ export function MobileWebsite() {
     <>
       <a
         href="#main"
-        className="sr-only z-50 rounded-full bg-cocoa px-4 py-2 text-milk focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+        className="sr-only z-50 rounded-full bg-terracotta px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
       >
         {t.a11y.skipToContent}
       </a>
@@ -38,7 +38,7 @@ export function MobileWebsite() {
             <Sun className="size-6" />
             {siteConfig.name}
           </p>
-          <p className="mt-1.5 text-sm text-milk/85">
+          <p className="mt-1.5 text-sm text-milk">
             © <CurrentYear /> · {t.footer.note}
           </p>
         </div>

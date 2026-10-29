@@ -14,7 +14,7 @@ export function Footer() {
           <Sun className="size-7" />
           {siteConfig.name}
         </p>
-        <p className="text-sm text-milk/85">
+        <p className="text-sm text-milk">
           © <CurrentYear /> · {t.footer.note}
         </p>
       </div>

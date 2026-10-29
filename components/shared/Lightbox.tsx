@@ -109,7 +109,7 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
               autoFocus
               onClick={onClose}
               aria-label={t.gallery.close}
-              className="grid size-12 place-items-center rounded-full bg-milk text-cocoa shadow-soft transition hover:bg-sand focus-visible:outline-milk"
+              className="grid size-12 place-items-center rounded-full bg-milk text-cocoa shadow-soft transition hover:bg-sun-soft focus-visible:outline-milk"
             >
               <CloseIcon className="size-6" />
             </button>

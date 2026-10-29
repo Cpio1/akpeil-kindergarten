@@ -13,14 +13,14 @@ export function MobileDocuments() {
   return (
     <section id="documents" aria-labelledby="m-documents-title" className="py-10">
       <div className="mx-auto max-w-2xl px-4">
-        <Reveal className="relative rounded-[36px_36px_36px_10px] border border-line bg-milk px-5 py-6 shadow-soft">
+        <Reveal className="relative rounded-[36px_36px_36px_10px] border-2 border-coral-soft bg-milk px-5 py-6 shadow-soft">
           <Star className="absolute -top-2.5 right-8 size-5 animate-twinkle" />
           <div className="flex items-center gap-4">
-            <div className="shape-blob grid size-16 shrink-0 place-items-center bg-honey-soft text-honey-deep">
+            <div className="shape-blob grid size-16 shrink-0 place-items-center bg-sun text-terracotta-deep">
               <FolderIcon className="size-8" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-honey-deep">{t.documents.eyebrow}</p>
+              <p className="text-sm font-semibold text-terracotta-deep">{t.documents.eyebrow}</p>
               <h2 id="m-documents-title" className="mt-0.5 text-xl leading-tight font-extrabold">
                 {t.documents.title}
               </h2>
@@ -32,7 +32,7 @@ export function MobileDocuments() {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-cocoa px-5 font-semibold text-milk shadow-soft"
+              className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-terracotta px-5 font-semibold text-white shadow-soft"
             >
               {t.documents.open}
               <ExternalIcon className="size-4" />
@@ -42,7 +42,7 @@ export function MobileDocuments() {
             <button
               type="button"
               disabled
-              className="mt-4 flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full border-2 border-dashed border-cocoa/40 bg-sand-soft px-5 font-semibold text-cocoa-soft"
+              className="mt-4 flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full border-2 border-dashed border-terracotta/60 bg-sun-soft px-5 font-semibold text-cocoa-soft"
             >
               {t.documents.unavailable}
             </button>

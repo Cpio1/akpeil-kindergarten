@@ -8,7 +8,7 @@ import { useLanguage } from "./LanguageProvider";
 export function LanguageSwitch({ className = "" }: { className?: string }) {
   const { lang, setLang, t } = useLanguage();
   return (
-    <div role="group" aria-label={t.a11y.languageSwitch} className={`flex rounded-full bg-sand p-1 ${className}`}>
+    <div role="group" aria-label={t.a11y.languageSwitch} className={`flex rounded-full bg-sun-soft p-1 ${className}`}>
       {languages.map((item) => {
         const active = item.code === lang;
         return (
@@ -19,7 +19,7 @@ export function LanguageSwitch({ className = "" }: { className?: string }) {
             aria-pressed={active}
             onClick={() => setLang(item.code)}
             className={`min-h-9 min-w-12 rounded-full px-3 text-sm font-semibold transition-colors ${
-              active ? "bg-cocoa text-milk shadow-soft" : "text-cocoa hover:bg-sand-soft"
+              active ? "bg-terracotta text-white shadow-soft" : "text-cocoa hover:bg-sun"
             }`}
           >
             {item.label}

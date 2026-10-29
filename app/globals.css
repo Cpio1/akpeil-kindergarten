@@ -2,19 +2,25 @@
 
 @theme {
   /* Основная палитра */
-  --color-milk: #fff8ee;
-  --color-sand: #f2dfc4;
-  --color-apricot: #edb58f;
-  --color-honey: #dfa64b;
-  --color-cocoa: #49372d;
+  --color-milk: #fffbf5; /* фон */
+  --color-coral: #f47c60; /* заметные декоративные акценты (не для текста) */
+  --color-sun: #f6c453; /* солнце, отдельные карточки и фигурки */
+  --color-apricot: #ffbb86; /* крупные декоративные формы */
+  --color-sage: #a8c69f; /* небольшой дополнительный акцент */
+  --color-cocoa: #49372d; /* основной текст */
+  --color-terracotta: #b7442c; /* основные кнопки, белый текст 5.4:1 */
 
-  /* Производные оттенки: мягкие подложки и тексты с достаточным контрастом */
-  --color-sand-soft: #f8ecda;
-  --color-apricot-soft: #f8dcc7;
-  --color-honey-soft: #f6e2bd;
-  --color-cocoa-soft: #6b5446; /* 6.7:1 на молочном фоне */
-  --color-honey-deep: #8a5a14; /* 5.6:1 на молочном фоне — для мелких акцентных подписей */
-  --color-line: #ead7bb;
+  /* Светлые оттенки для поверхностей разделов и карточек */
+  --color-sun-soft: #fff0c7;
+  --color-apricot-soft: #ffe6d1;
+  --color-coral-soft: #fdd9ce;
+  --color-coral-tint: #ffede6;
+  --color-sage-soft: #e1edd6;
+
+  /* Тексты с достаточным контрастом */
+  --color-cocoa-soft: #6b5446; /* вторичный текст: 6.8:1 на молочном, ≥5.3:1 на светлых оттенках */
+  --color-terracotta-deep: #9c3823; /* мелкие подписи и hover кнопок: ≥5.8:1 на светлых фонах */
+  --color-line: #f6d9c4;
 
   --font-sans: var(--font-golos), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-nunito), var(--font-golos), ui-sans-serif, sans-serif;
@@ -50,7 +56,15 @@
 
 :root {
   --header-h: 60px;
-  color-scheme: light;
+  /*
+   * Сайт всегда светлый — даже при тёмной системной теме устройства.
+   * Правил prefers-color-scheme и классов dark: в проекте нет намеренно.
+   * «only light», а не просто «light»: только так Chrome (Android) и Samsung Internet
+   * не включают принудительное затемнение страниц. Проверено в Chrome с тёмной темой.
+   */
+  color-scheme: only light;
+  background-color: var(--color-milk);
+  color: var(--color-cocoa);
 }
 @media (min-width: 1024px) {
   :root {
@@ -65,7 +79,7 @@ html {
 }
 
 body {
-  background: var(--color-milk);
+  background-color: var(--color-milk);
   color: var(--color-cocoa);
   font-family: var(--font-sans);
   overflow-x: clip;
@@ -91,7 +105,7 @@ p {
 }
 
 ::selection {
-  background: var(--color-honey-soft);
+  background: var(--color-sun-soft);
 }
 
 /* Мягкое появление при прокрутке (класс ставит компонент Reveal) */

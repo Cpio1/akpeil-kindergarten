@@ -33,15 +33,15 @@ export function Gallery() {
       ref={sectionRef}
       id="gallery"
       aria-labelledby="gallery-title"
-      className="relative overflow-hidden bg-sand-soft py-12 min-[1400px]:py-16"
+      className="relative overflow-hidden bg-sun-soft py-12 min-[1400px]:py-16"
     >
-      <Cloud className="absolute top-3 right-[24%] w-20 animate-sway opacity-90" />
-      <Star className="absolute top-8 left-[3%] size-6 animate-twinkle" />
+      <Cloud className="absolute top-3 right-[24%] w-20 animate-sway" />
+      <Star className="absolute top-8 left-[3%] size-6 animate-twinkle" color="#F47C60" />
 
       <div className="mx-auto max-w-6xl px-6 xl:px-8">
         <div className="flex items-end justify-between gap-6">
           <Reveal>
-            <p className="text-sm font-semibold text-honey-deep">{t.gallery.eyebrow}</p>
+            <p className="text-sm font-semibold text-terracotta-deep">{t.gallery.eyebrow}</p>
             <h2 id="gallery-title" className="mt-2 text-3xl leading-tight font-extrabold xl:text-[2.1rem]">
               {t.gallery.title}
             </h2>
@@ -52,7 +52,7 @@ export function Gallery() {
               onClick={toggle}
               aria-expanded={expanded}
               aria-controls="gallery-list"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-cocoa/80 bg-milk px-6 py-3 font-semibold transition hover:-translate-y-0.5 hover:bg-sand"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-terracotta bg-milk px-6 py-3 font-semibold text-terracotta-deep transition hover:-translate-y-0.5 hover:bg-coral-tint"
             >
               {expanded ? t.gallery.showLess : t.gallery.showMore}
               <ChevronDownIcon className={`size-5 transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -81,7 +81,7 @@ export function Gallery() {
                     onClick={() => setOpenIndex(i)}
                     aria-label={t.gallery.openPhoto(i + 1)}
                     aria-haspopup="dialog"
-                    className={`group relative block aspect-[4/3] max-h-[calc((100svh-var(--header-h)-15rem)/2)] w-full overflow-hidden bg-sand shadow-soft transition hover:-translate-y-1 hover:shadow-lift ${tileShapes[i % tileShapes.length]}`}
+                    className={`group relative block aspect-[4/3] max-h-[calc((100svh-var(--header-h)-15rem)/2)] w-full overflow-hidden bg-apricot-soft shadow-soft transition hover:-translate-y-1 hover:shadow-lift ${tileShapes[i % tileShapes.length]}`}
                   >
                     <Image
                       src={photo.src}

@@ -43,7 +43,7 @@ export function MobileHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40">
-      <div className="relative z-10 flex h-[var(--header-h)] items-center gap-2 border-b border-line/70 bg-milk/95 px-4 backdrop-blur-md">
+      <div className="relative z-10 flex h-[var(--header-h)] items-center gap-2 border-b border-line bg-milk/95 px-4 text-cocoa backdrop-blur-md">
         <a href="#home" aria-label={t.a11y.home} onClick={() => setOpen(false)} className="flex min-w-0 items-center gap-2 rounded-full">
           <Sun className="size-8 shrink-0" />
           <span className="flex min-w-0 flex-col leading-none">
@@ -61,7 +61,7 @@ export function MobileHeader() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? t.a11y.closeMenu : t.a11y.openMenu}
-          className="grid size-11 shrink-0 place-items-center rounded-full bg-cocoa text-milk shadow-soft"
+          className="grid size-11 shrink-0 place-items-center rounded-full bg-terracotta text-white shadow-soft transition hover:bg-terracotta-deep"
         >
           {open ? <CloseIcon className="size-6" /> : <MenuIcon className="size-6" />}
         </button>
@@ -76,7 +76,7 @@ export function MobileHeader() {
         ref={panelRef}
         id="mobile-menu"
         hidden={!open}
-        className="relative max-h-[calc(100dvh-var(--header-h))] overflow-y-auto rounded-b-[32px] bg-milk px-4 pt-2 pb-5 shadow-lift"
+        className="relative max-h-[calc(100dvh-var(--header-h))] overflow-y-auto rounded-b-[32px] bg-milk px-4 text-cocoa pt-2 pb-5 shadow-lift"
       >
         <nav aria-label={t.a11y.mainNav}>
           <ul className="grid gap-1">
@@ -86,8 +86,8 @@ export function MobileHeader() {
                   href={`#${id}`}
                   onClick={() => setOpen(false)}
                   aria-current={active === id ? "location" : undefined}
-                  className={`flex min-h-12 items-center rounded-2xl px-4 text-[1.05rem] font-semibold ${
-                    active === id ? "bg-sand" : "hover:bg-sand-soft"
+                  className={`flex min-h-12 items-center rounded-2xl px-4 text-[1.05rem] font-semibold text-cocoa ${
+                    active === id ? "bg-sun" : "bg-milk hover:bg-sun-soft"
                   }`}
                 >
                   {t.nav[id]}
@@ -98,7 +98,7 @@ export function MobileHeader() {
         </nav>
         <a
           href={siteConfig.phone.href}
-          className="mt-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-cocoa px-5 font-semibold text-milk shadow-soft"
+          className="mt-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-terracotta px-5 font-semibold text-white shadow-soft"
         >
           <PhoneIcon className="size-5" />
           {siteConfig.phone.display}

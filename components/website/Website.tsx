@@ -17,7 +17,7 @@ export function Website() {
     <>
       <a
         href="#main"
-        className="sr-only z-50 rounded-full bg-cocoa px-4 py-2 text-milk focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        className="sr-only z-50 rounded-full bg-terracotta px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
       >
         {t.a11y.skipToContent}
       </a>
