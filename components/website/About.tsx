@@ -14,7 +14,7 @@ export function About() {
       <Cloud className="absolute top-8 right-[4%] w-24 animate-sway [animation-delay:-3s]" />
 
       <div className="mx-auto grid max-w-6xl grid-cols-[0.85fr_1.15fr] items-center gap-14 px-6 xl:px-8">
-        <Reveal className="relative mx-auto w-full max-w-[25rem]">
+        <Reveal className="relative mx-auto w-full max-w-[24rem]">
           {/* Смещённая контурная фигура создаёт мягкую асимметрию */}
           <div aria-hidden="true" className="shape-petal absolute inset-0 translate-x-4 translate-y-4 border-[3px] border-coral" />
           <Flower className="absolute -top-6 -left-6 z-10 size-14 animate-spin-slow" color="#F6C453" />
@@ -23,8 +23,9 @@ export function About() {
             photo={aboutPhoto}
             alt={t.about.photoAlt}
             pendingLabel={t.about.photoPending}
-            sizes="(min-width: 1280px) 400px, 32vw"
-            className="shape-petal aspect-[4/5] max-h-[calc(100svh-var(--header-h)-8rem)] min-h-[20rem] w-full shadow-lift"
+            sizes="(min-width: 1280px) 384px, 30vw"
+            containPadding="p-[7%]"
+            className="shape-petal aspect-square max-h-[calc(100svh-var(--header-h)-8rem)] min-h-[18rem] w-full shadow-lift"
           />
         </Reveal>
 

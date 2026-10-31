@@ -47,7 +47,7 @@ export function MobileHero() {
           </a>
         </div>
 
-        <div className="relative mx-auto mt-8 w-[86%] max-w-sm">
+        <div className="relative mx-auto mt-8 w-[80%] max-w-[21rem]">
           <div aria-hidden="true" className="shape-blob absolute -inset-x-4 top-8 -bottom-3 bg-apricot" />
           <Sun className="absolute -top-4 -right-6 z-10 size-16 animate-spin-slow" />
           <Star className="absolute top-1/2 -left-6 size-5 animate-twinkle" color="#F47C60" />
@@ -55,9 +55,10 @@ export function MobileHero() {
             photo={mainPhoto}
             alt={t.hero.photoAlt}
             pendingLabel={t.about.photoPending}
-            sizes="(min-width: 640px) 384px, 86vw"
+            sizes="(min-width: 640px) 336px, 80vw"
             eager
-            className="shape-arch aspect-[4/5] w-full shadow-lift"
+            containPadding="p-[11%]"
+            className="shape-arch aspect-square w-full shadow-lift"
           />
         </div>
 

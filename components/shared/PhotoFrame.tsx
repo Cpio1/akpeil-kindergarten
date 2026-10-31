@@ -12,16 +12,43 @@ type PhotoFrameProps = {
   /** Форма и размеры рамки (классы Tailwind / .shape-*). */
   className?: string;
   eager?: boolean;
+  /** Внутренний отступ для режима contain, чтобы логотип не касался скруглённых краёв рамки. */
+  containPadding?: string;
 };
 
 /**
  * Фотография раздела в фигурной рамке. Заполняет рамку (object-cover) с индивидуальной
  * точкой кадрирования. Если файла нет, показывает аккуратную заглушку без битых картинок.
  */
-export function PhotoFrame({ photo, alt, pendingLabel, sizes, className = "", eager = false }: PhotoFrameProps) {
+export function PhotoFrame({
+  photo,
+  alt,
+  pendingLabel,
+  sizes,
+  className = "",
+  eager = false,
+  containPadding = "p-[8%]",
+}: PhotoFrameProps) {
+  const contain = photo?.fit === "contain";
   return (
-    <div className={`relative overflow-hidden bg-apricot-soft ${className}`}>
-      {photo ? (
+    // Логотип на белом фоне, поэтому рамка в режиме contain тоже белая — без видимого квадрата.
+    <div className={`relative overflow-hidden ${contain ? "bg-white" : "bg-apricot-soft"} ${className}`}>
+      {photo && contain ? (
+        <div className={`absolute inset-0 ${containPadding}`}>
+          <div className="relative size-full">
+            <Image
+              src={photo.src}
+              alt={alt}
+              fill
+              sizes={sizes}
+              loading={eager ? "eager" : "lazy"}
+              fetchPriority={eager ? "high" : undefined}
+              className="object-contain"
+              style={{ objectPosition: photo.position }}
+            />
+          </div>
+        </div>
+      ) : photo ? (
         <Image
           src={photo.src}
           alt={alt}

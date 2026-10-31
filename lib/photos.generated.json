@@ -1,5 +1,15 @@
 {
-  "main": null,
-  "about": null,
+  "main": {
+    "file": "logo.jpeg",
+    "src": "/images/logo.jpeg",
+    "width": 1254,
+    "height": 1254
+  },
+  "about": {
+    "file": "logo.jpeg",
+    "src": "/images/logo.jpeg",
+    "width": 1254,
+    "height": 1254
+  },
   "gallery": []
 }

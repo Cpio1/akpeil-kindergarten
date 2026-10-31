@@ -19,7 +19,7 @@ export function MobileAbout() {
           </h2>
         </Reveal>
 
-        <Reveal className="relative mx-auto mt-6 w-[88%] max-w-sm">
+        <Reveal className="relative mx-auto mt-6 w-[76%] max-w-[19rem]">
           <div aria-hidden="true" className="shape-petal absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-coral" />
           <Flower className="absolute -top-4 -left-4 z-10 size-10 animate-spin-slow" color="#F6C453" />
           <Star className="absolute -right-5 bottom-8 size-5 animate-twinkle" color="#F47C60" />
@@ -27,8 +27,9 @@ export function MobileAbout() {
             photo={aboutPhoto}
             alt={t.about.photoAlt}
             pendingLabel={t.about.photoPending}
-            sizes="(min-width: 640px) 384px, 88vw"
-            className="shape-petal aspect-[4/3] w-full shadow-lift"
+            sizes="(min-width: 640px) 304px, 76vw"
+            containPadding="p-[7%]"
+            className="shape-petal aspect-square w-full shadow-lift"
           />
         </Reveal>
 

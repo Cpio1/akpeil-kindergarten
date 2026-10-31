@@ -60,7 +60,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[27rem]">
+        <div className="relative mx-auto w-full max-w-[26rem]">
           {/* Мягкая подложка-облако за аркой */}
           <div aria-hidden="true" className="shape-blob absolute -inset-x-6 top-10 -bottom-4 bg-apricot" />
           <Sun className="absolute -top-5 -right-8 z-10 size-24 animate-spin-slow" />
@@ -70,9 +70,10 @@ export function Hero() {
             photo={mainPhoto}
             alt={t.hero.photoAlt}
             pendingLabel={t.about.photoPending}
-            sizes="(min-width: 1280px) 432px, 36vw"
+            sizes="(min-width: 1280px) 416px, 34vw"
             eager
-            className="shape-arch h-[clamp(22rem,calc(100svh-var(--header-h)-7rem),32rem)] w-full shadow-lift"
+            containPadding="p-[11%]"
+            className="shape-arch aspect-square max-h-[calc(100svh-var(--header-h)-7rem)] min-h-[20rem] w-full shadow-lift"
           />
         </div>
       </div>

@@ -4,6 +4,7 @@
  *
  *   public/images/main-page.*   — главный экран (любое расширение: jpg, jpeg, png, webp, avif)
  *   public/images/main-page2.*  — раздел «Біз туралы / О нас»
+ *   public/images/logo.*        — логотип: если есть, показывается в обоих разделах вместо фото
  *   public/gallery/*            — фотографии галереи (порядок — по имени файла)
  *
  * Остальные фото из public/images (кроме main-page и main-page2) тоже попадают в галерею.
@@ -18,6 +19,7 @@ const PHOTO_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const UNSUPPORTED_EXTENSIONS = new Set([".heic", ".heif", ".tif", ".tiff"]);
 const MAIN = "main-page";
 const ABOUT = "main-page2";
+const LOGO = "logo";
 
 async function listPhotos(dir) {
   let files;
@@ -53,11 +55,12 @@ async function describe({ dir, name }) {
 const sectionPhotos = [...(await listPhotos("images")), ...(await listPhotos(""))];
 const findSection = (base) => sectionPhotos.find((photo) => photo.base === base);
 
-const mainFile = findSection(MAIN);
-const aboutFile = findSection(ABOUT);
+const logoFile = findSection(LOGO);
+const mainFile = logoFile ?? findSection(MAIN);
+const aboutFile = logoFile ?? findSection(ABOUT);
 const galleryFiles = [
   ...(await listPhotos("gallery")),
-  ...sectionPhotos.filter((photo) => photo.dir === "images" && photo !== mainFile && photo !== aboutFile),
+  ...sectionPhotos.filter((photo) => photo.dir === "images" && photo !== mainFile && photo !== aboutFile && photo !== logoFile),
 ];
 
 const result = {
