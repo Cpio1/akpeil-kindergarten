@@ -31,8 +31,7 @@ export function PhotoFrame({
 }: PhotoFrameProps) {
   const contain = photo?.fit === "contain";
   return (
-    // Логотип на белом фоне, поэтому рамка в режиме contain тоже белая — без видимого квадрата.
-    <div className={`relative overflow-hidden ${contain ? "bg-white" : "bg-apricot-soft"} ${className}`}>
+    <div className={`relative overflow-hidden bg-apricot-soft ${className}`}>
       {photo && contain ? (
         <div className={`absolute inset-0 ${containPadding}`}>
           <div className="relative size-full">

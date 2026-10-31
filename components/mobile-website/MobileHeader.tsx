@@ -6,7 +6,7 @@ import { useLanguage } from "../shared/LanguageProvider";
 import { useActiveSection } from "../shared/hooks";
 import { LanguageSwitch } from "../shared/ui";
 import { CloseIcon, MenuIcon, PhoneIcon } from "../shared/Icons";
-import { Sun } from "../shared/Decor";
+import { Logo } from "../shared/Logo";
 
 export function MobileHeader() {
   const { t } = useLanguage();
@@ -45,7 +45,7 @@ export function MobileHeader() {
     <header className="fixed inset-x-0 top-0 z-40">
       <div className="relative z-10 flex h-[var(--header-h)] items-center gap-2 border-b border-line bg-milk/95 px-4 text-cocoa backdrop-blur-md">
         <a href="#home" aria-label={t.a11y.home} onClick={() => setOpen(false)} className="flex min-w-0 items-center gap-2 rounded-full">
-          <Sun className="size-8 shrink-0" />
+          <Logo eager className="size-11 shrink-0" />
           <span className="flex min-w-0 flex-col leading-none">
             <span className="font-display text-lg font-extrabold">{siteConfig.shortName}</span>
             <span className="mt-0.5 truncate text-[0.7rem] text-cocoa-soft">бөбекжай-бақшасы</span>

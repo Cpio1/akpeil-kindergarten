@@ -1,13 +1,13 @@
 {
   "main": {
-    "file": "logo.jpeg",
-    "src": "/images/logo.jpeg",
+    "file": "logo.png",
+    "src": "/images/logo.png",
     "width": 1254,
     "height": 1254
   },
   "about": {
-    "file": "logo.jpeg",
-    "src": "/images/logo.jpeg",
+    "file": "logo.png",
+    "src": "/images/logo.png",
     "width": 1254,
     "height": 1254
   },

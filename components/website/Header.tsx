@@ -5,7 +5,7 @@ import { useLanguage } from "../shared/LanguageProvider";
 import { useActiveSection } from "../shared/hooks";
 import { LanguageSwitch } from "../shared/ui";
 import { PhoneIcon } from "../shared/Icons";
-import { Sun } from "../shared/Decor";
+import { Logo } from "../shared/Logo";
 
 export function Header() {
   const { t } = useLanguage();
@@ -15,7 +15,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-40 h-[var(--header-h)] border-b border-line bg-milk/95 text-cocoa backdrop-blur-md">
       <div className="mx-auto flex h-full max-w-7xl items-center gap-4 px-6 xl:px-8">
         <a href="#home" aria-label={t.a11y.home} className="group flex shrink-0 items-center gap-2.5 rounded-full">
-          <Sun className="size-9 transition-transform duration-700 group-hover:rotate-45" />
+          <Logo eager className="size-12 shrink-0 transition-transform duration-500 group-hover:scale-105" />
           <span className="flex flex-col leading-none">
             <span className="font-display text-xl font-extrabold">{siteConfig.shortName}</span>
             <span className="mt-0.5 text-xs text-cocoa-soft">бөбекжай-бақшасы</span>
